@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,6 +22,7 @@ public class GenerarEnemigo : MonoBehaviour
 
     void CrearEnemigo()
     {
-        //Transform puntoAleatorio = puntos[Random.Range(0, puntos.Length)];
+        Transform puntoAleatorio = puntos[Random.Range(0, puntos.Length)];
+        Instantiate(enemigo, puntoAleatorio.position, Quaternion.identity);
     }
 }

@@ -6,7 +6,7 @@ public class DisparoEnemigo : MonoBehaviour
 {
     public Transform posicionGenerar;
     public GameObject bala;
-    public GameObject jugador;
+    private GameObject jugador;
 
     public float velocidadBala = 10f;
     public float tiempoEntreDisparos = 1f;

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1672648405824493472}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PosicionGenerarEnemigo
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 2360951962529973089}
   - component: {fileID: 7717351070192224955}
   - component: {fileID: 5187862472740698555}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemigo
   m_TagString: Enemigo
   m_Icon: {fileID: 0}
@@ -166,6 +166,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca564df6a34fb6d4d94bdcf059dcec05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigidbody: {fileID: 0}
+  velocidadMovimiento: 3
   vida: 5
 --- !u!114 &5187862472740698555
 MonoBehaviour:
