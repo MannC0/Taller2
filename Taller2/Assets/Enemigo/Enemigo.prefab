@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 5837136331124740140}
   - component: {fileID: 2635694141623136271}
   - component: {fileID: 2611875279800859873}
+  - component: {fileID: 6800052264108126296}
   m_Layer: 6
   m_Name: Enemigo
   m_TagString: Enemigo
@@ -166,7 +167,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca564df6a34fb6d4d94bdcf059dcec05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidbody: {fileID: 0}
+  rigidbody: {fileID: 6800052264108126296}
+  rupiasPrefabs:
+  - {fileID: 4835456033103974474, guid: 76a1624bfabd2f04792b138bb5e81163, type: 3}
+  - {fileID: 384012560329707698, guid: 064d8e6e8e6bbbd4ba30e0ca6ba059fd, type: 3}
+  - {fileID: 4016013278257688486, guid: ef9bfdffd2b1c0448ae163b63230045f, type: 3}
+  powerUpPrefabs:
+  - {fileID: 1785605551990458529, guid: 65492786178f8e24c83a9db4b377b9a2, type: 3}
   velocidadMovimiento: 3
   vida: 5
 --- !u!114 &2611875279800859873
@@ -187,3 +194,30 @@ MonoBehaviour:
   tiempoEntreDisparos: 3
   cantidadRafaga: 5
   tiempoRafaga: 0.2
+--- !u!50 &6800052264108126296
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8270423340903317123}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 8
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

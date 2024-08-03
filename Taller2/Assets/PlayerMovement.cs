@@ -1,11 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public GameObject cantidadDinero;
+    public int dinero = 0;
     public int vida = 15;
     public float velocidadMovimiento = 5f;
+    private float tiempoEfectoPowerUp = 0;
+    private float tiempoTranscurrido = 0;
+    private bool powerUpActivo = false;
     public Camera camara;
 
     public Rigidbody2D rigidbody;
@@ -18,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        cantidadDinero.GetComponent<TMP_Text>().text = dinero.ToString();
     }
 
     void Update()
@@ -30,6 +37,18 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Velocidad", movimiento.sqrMagnitude);
 
         posicionMouse = camara.ScreenToWorldPoint(Input.mousePosition);
+
+        if (powerUpActivo == true)
+        {
+            tiempoTranscurrido += Time.deltaTime;
+            if (tiempoTranscurrido > tiempoEfectoPowerUp)
+            {
+                powerUpActivo = false;
+                tiempoTranscurrido = 0;
+                tiempoEfectoPowerUp = 0;
+                gameObject.GetComponent<Disparar>().ratioDeDisparo = gameObject.GetComponent<Disparar>().ratioDeDisparo * 2;
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -47,6 +66,29 @@ public class PlayerMovement : MonoBehaviour
         if (vida == 0)
         {
             Destroy(gameObject);
+        }
+    }
+
+    public void AumentarDinero(int ganancia)
+    {
+        dinero += ganancia;
+        cantidadDinero.GetComponent<TMP_Text>().text = dinero.ToString();
+    }
+
+    public void PowerUp(int numPowerUp)
+    {
+        if (numPowerUp == 1)
+        {
+            if (powerUpActivo == false)
+            {
+                powerUpActivo = true;
+                tiempoEfectoPowerUp = 10;
+                gameObject.GetComponent<Disparar>().ratioDeDisparo = gameObject.GetComponent<Disparar>().ratioDeDisparo / 2;
+            }
+            else 
+            {
+                tiempoTranscurrido = 0;
+            }
         }
     }
 }

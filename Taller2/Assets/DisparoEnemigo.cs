@@ -41,6 +41,8 @@ public class DisparoEnemigo : MonoBehaviour
     {
         atacando = true;
 
+
+
         for (int i = 0; i < cantidadRafaga; i++)
         {
             Vector2 direccionDisparo = jugador.transform.position - transform.position;
