@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 2611875279800859873}
   - component: {fileID: 6800052264108126296}
   m_Layer: 6
-  m_Name: Enemigo
+  m_Name: Arbol
   m_TagString: Enemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -174,7 +174,7 @@ MonoBehaviour:
   - {fileID: 4016013278257688486, guid: ef9bfdffd2b1c0448ae163b63230045f, type: 3}
   powerUpPrefabs:
   - {fileID: 1785605551990458529, guid: 65492786178f8e24c83a9db4b377b9a2, type: 3}
-  velocidadMovimiento: 3
+  velocidadMovimiento: 4
   vida: 5
 --- !u!114 &2611875279800859873
 MonoBehaviour:
@@ -191,8 +191,8 @@ MonoBehaviour:
   posicionGenerar: {fileID: 2790743380664714771}
   bala: {fileID: 6693377407571588375, guid: 528f05ccc6fc93546956babd7da82fa5, type: 3}
   velocidadBala: 7
-  tiempoEntreDisparos: 3
-  cantidadRafaga: 5
+  tiempoEntreDisparos: 1
+  cantidadRafaga: 1
   tiempoRafaga: 0.2
 --- !u!50 &6800052264108126296
 Rigidbody2D:

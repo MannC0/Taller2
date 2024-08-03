@@ -5,7 +5,7 @@ using UnityEngine;
 public class GenerarEnemigo : MonoBehaviour
 {
     public Transform[] puntos;
-    public GameObject enemigo;
+    public GameObject[] enemigos;
     public float tiempoEntreEnemigos;
     private float tiempoTranscurrido;
 
@@ -23,6 +23,15 @@ public class GenerarEnemigo : MonoBehaviour
     void CrearEnemigo()
     {
         Transform puntoAleatorio = puntos[Random.Range(0, puntos.Length)];
-        Instantiate(enemigo, puntoAleatorio.position, Quaternion.identity);
+        int random = Random.Range(0, 100);
+
+        if (random < 70)
+        {
+            Instantiate(enemigos[0], puntoAleatorio.position, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(enemigos[1], puntoAleatorio.position, Quaternion.identity);
+        }
     }
 }

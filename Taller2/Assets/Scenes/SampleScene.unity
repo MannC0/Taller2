@@ -1321,7 +1321,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1330,8 +1330,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282023965
-  m_fontColor: {r: 0.115566045, g: 0.5, b: 0.2284084, a: 1}
+    rgba: 4280736044
+  m_fontColor: {r: 0.17391787, g: 0.8490566, b: 0.1481844, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1432,7 +1432,9 @@ MonoBehaviour:
   - {fileID: 1490427624}
   - {fileID: 163830855}
   - {fileID: 50344155}
-  enemigo: {fileID: 8270423340903317123, guid: 14ccf7b69cf042c4d8de8fc7bfa1fb86, type: 3}
+  enemigos:
+  - {fileID: 8270423340903317123, guid: 14ccf7b69cf042c4d8de8fc7bfa1fb86, type: 3}
+  - {fileID: 6761923149082532496, guid: b76cb04dff7603641a6b970f33eef738, type: 3}
   tiempoEntreEnemigos: 1
 --- !u!4 &1486824813
 Transform:
