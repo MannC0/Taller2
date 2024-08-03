@@ -177,7 +177,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 8
+  m_Mass: 5.5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -211,8 +211,9 @@ MonoBehaviour:
   - {fileID: 4835456033103974474, guid: 76a1624bfabd2f04792b138bb5e81163, type: 3}
   powerUpPrefabs:
   - {fileID: 1785605551990458529, guid: 65492786178f8e24c83a9db4b377b9a2, type: 3}
-  velocidadMovimiento: 3
+  velocidadMovimiento: 2.5
   vida: 10
+  jefe: 0
 --- !u!114 &3270891363112004119
 MonoBehaviour:
   m_ObjectHideFlags: 0
