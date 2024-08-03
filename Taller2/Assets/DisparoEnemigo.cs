@@ -10,9 +10,19 @@ public class DisparoEnemigo : MonoBehaviour
 
     public float velocidadBala = 10f;
     public float tiempoEntreDisparos = 1f;
-    public int cantidadRafaga = 5;
+    public int cantidadRafaga = 5; 
     public float tiempoRafaga = 0.2f;
     private bool atacando = false;
+
+    private void Start()
+    {
+        // Try to find the player by tag or name
+        jugador = GameObject.FindWithTag("Player");
+        if (jugador == null)
+        {
+            Debug.LogError("Player object not found. Make sure the player GameObject has the 'Player' tag.");
+        }
+    }
 
     private void Update()
     {
@@ -39,12 +49,13 @@ public class DisparoEnemigo : MonoBehaviour
             Rigidbody2D rigidbody = bullet.GetComponent<Rigidbody2D>();
             bullet.transform.right = direccionDisparo;
             rigidbody.AddForce(bullet.transform.right * velocidadBala, ForceMode2D.Impulse);
-            Destroy(bullet, 3f);
+            Destroy(bullet, 5f);
 
             yield return new WaitForSeconds(tiempoRafaga);
         }
 
         yield return new WaitForSeconds(tiempoEntreDisparos);
         atacando = false;
+
     }
 }
