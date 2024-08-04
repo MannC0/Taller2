@@ -29,9 +29,13 @@ public class GenerarEnemigo : MonoBehaviour
         {
             Instantiate(enemigos[0], puntoAleatorio.position, Quaternion.identity);
         }
-        else
+        else if (random < 95)
         {
             Instantiate(enemigos[1], puntoAleatorio.position, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(enemigos[2], puntoAleatorio.position, Quaternion.identity);
         }
     }
 }

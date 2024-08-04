@@ -24,10 +24,6 @@ public class Bala : MonoBehaviour
                 }
             }
         }
-        else 
-        {
-            
-        }
 
         GameObject efecto = Instantiate(efectoExplosion, transform.position, Quaternion.identity);
         Destroy(efecto, 1f);

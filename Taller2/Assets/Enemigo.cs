@@ -33,7 +33,6 @@ public class Enemigo : MonoBehaviour
 
             rigidbody.rotation = angulo + ajuste;
 
-            // Move the enemy towards the player
             rigidbody.velocity = direccion * velocidadMovimiento;
         }
     }
