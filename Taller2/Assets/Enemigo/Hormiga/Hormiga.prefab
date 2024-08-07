@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 7302418157731966139}
   - component: {fileID: 2268177991108117888}
   - component: {fileID: 5324990245816601561}
-  m_Layer: 0
+  - component: {fileID: 2020895519709908462}
+  m_Layer: 6
   m_Name: Hormiga
-  m_TagString: Untagged
+  m_TagString: Enemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,9 +147,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca564df6a34fb6d4d94bdcf059dcec05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidbody: {fileID: 0}
-  rupiasPrefabs: []
-  powerUpPrefabs: []
+  rigidbody: {fileID: 5324990245816601561}
+  rupiasPrefabs:
+  - {fileID: 4835456033103974474, guid: 76a1624bfabd2f04792b138bb5e81163, type: 3}
+  - {fileID: 384012560329707698, guid: 064d8e6e8e6bbbd4ba30e0ca6ba059fd, type: 3}
+  - {fileID: 4016013278257688486, guid: ef9bfdffd2b1c0448ae163b63230045f, type: 3}
+  powerUpPrefabs:
+  - {fileID: 1785605551990458529, guid: 65492786178f8e24c83a9db4b377b9a2, type: 3}
   velocidadMovimiento: 5
   vida: 5
   jefe: 0
@@ -197,6 +202,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &2020895519709908462
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471018744072816161}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6d771141e14fe6a4b85cc90aaca799ba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3178209318938211151
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,7 +232,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2155026280369192924}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PosicionGenerar
   m_TagString: Untagged
   m_Icon: {fileID: 0}

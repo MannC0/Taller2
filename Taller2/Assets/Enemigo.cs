@@ -12,10 +12,12 @@ public class Enemigo : MonoBehaviour
     public int vida = 5;
     public bool jefe;
     private Vector2 direccion;
+    private Animator animacion;
 
     private void Start()
     {
         jugador = GameObject.FindGameObjectWithTag("Player");
+        animacion = GetComponent<Animator>();
     }
 
     private void Update()
@@ -40,6 +42,14 @@ public class Enemigo : MonoBehaviour
     public void BajarVida()
     {
         vida -= 1;
+
+        // Set the direction parameters for the blend tree
+        animacion.SetFloat("DamageDirectionX", direccion.x);
+        animacion.SetFloat("DamageDirectionY", direccion.y);
+
+        // Trigger the damage animation
+        animacion.SetTrigger("TakeDamage");
+
         if (vida <= 0)
         {
             MatarEnemigo();
