@@ -108,7 +108,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 06a287cc97cb64df8a11af10f2352365, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -191,8 +191,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posicionGenerar: {fileID: 2790743380664714771}
   bala: {fileID: 6693377407571588375, guid: 528f05ccc6fc93546956babd7da82fa5, type: 3}
-  velocidadBala: 7
-  tiempoEntreDisparos: 1
+  velocidadBala: 6.2
+  tiempoEntreDisparos: 2
   cantidadRafaga: 1
   tiempoRafaga: 0.2
 --- !u!50 &6800052264108126296
