@@ -26,7 +26,7 @@ public class DisparoEnemigo : MonoBehaviour
 
     private void Update()
     {
-        if (atacando == false)
+        if (atacando == false && (transform.position - jugador.transform.position).magnitude < 7)
         {
             Atacar();
         }

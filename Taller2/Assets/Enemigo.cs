@@ -14,6 +14,7 @@ public class Enemigo : MonoBehaviour
     public bool useAnimator;  // Add this line
     private Vector2 direccion;
     private Animator animacion;
+    private GameManager victoryManager;
 
     private void Start()
     {
@@ -22,6 +23,7 @@ public class Enemigo : MonoBehaviour
         {
             animacion = GetComponent<Animator>();
         }
+        victoryManager = FindObjectOfType<GameManager>();
     }
 
     private void Update()
@@ -92,6 +94,11 @@ public class Enemigo : MonoBehaviour
         {
             GameObject powerUp = Instantiate(powerUpPrefabs[0], transform.position, Quaternion.identity);
             Destroy(powerUp, 5f);
+        }
+
+        if (jefe && victoryManager != null)
+        {
+            victoryManager.EndGame();
         }
 
         Destroy(gameObject);
