@@ -16,18 +16,20 @@ public class PlayerMovement : MonoBehaviour
     public int nivel = 1;
     public int siguienteNivel = 100;
     public int incrementoNivel = 2;
+    private int experienciaActual = 0;
+
+    public GameObject carta;
     public GameObject cantidadDinero;
     public int dinero = 0;
-    public Camera camara;
-    public Rigidbody2D rigidbody;
-
-    private int experienciaActual = 0;
     private float tiempoEfectoPowerUp = 0;
     private float tiempoTranscurrido = 0;
     private float tiempoTranscurridoRegeneracion = 0;
     private bool powerUpActivo = false;
-    private DeathScreenController deathScreenController;
+    public Camera camara;
+    public Rigidbody2D rigidbody;
     private Animator animator;
+    private DeathScreenController deathScreenController;
+
 
     Vector2 movimiento;
     Vector2 posicionMouse;
@@ -41,7 +43,6 @@ public class PlayerMovement : MonoBehaviour
 
         gameObject.GetComponent<Disparar>().area = area;
         gameObject.GetComponent<Disparar>().dañoBala = daño;
-
         vidaMax = vida;
     }
 
@@ -107,9 +108,10 @@ public class PlayerMovement : MonoBehaviour
             nivel++;
             experienciaActual = 0;
             siguienteNivel = siguienteNivel * incrementoNivel;
-            //Generar carta
+            carta.SetActive(true);
         }
     }
+
 
     void Muerte()
     {
@@ -120,6 +122,13 @@ public class PlayerMovement : MonoBehaviour
     {
         dinero += ganancia;
         cantidadDinero.GetComponent<TMP_Text>().text = dinero.ToString();
+    }
+
+    public void AumentarDaño()
+    {
+        daño = (int)(daño * 1.2f);
+        gameObject.GetComponent<Disparar>().dañoBala = daño;
+        carta.SetActive(false);
     }
 
     public void PowerUp(int numPowerUp)
