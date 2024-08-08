@@ -8,6 +8,7 @@ public class DisparoEnemigo : MonoBehaviour
     public GameObject bala;
     private GameObject jugador;
 
+    public int dañoBala;
     public float velocidadBala = 10f;
     public float tiempoEntreDisparos = 1f;
     public int cantidadRafaga = 5; 
@@ -52,6 +53,7 @@ public class DisparoEnemigo : MonoBehaviour
             bullet.transform.right = direccionDisparo;
             rigidbody.AddForce(bullet.transform.right * velocidadBala, ForceMode2D.Impulse);
             Destroy(bullet, 5f);
+            bullet.GetComponent<Bala>().dañoBala = dañoBala;
 
             yield return new WaitForSeconds(tiempoRafaga);
         }

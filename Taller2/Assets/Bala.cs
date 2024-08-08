@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bala : MonoBehaviour
 {
     public GameObject efectoExplosion;
+    public int dañoBala;
     public string objetivo;
 
 
@@ -14,13 +15,13 @@ public class Bala : MonoBehaviour
         {
             if (collision.gameObject.tag == "Enemigo")
             {
-                collision.gameObject.GetComponent<Enemigo>().BajarVida();
+                collision.gameObject.GetComponent<Enemigo>().BajarVida(dañoBala);
             }
             else 
             {
                 if (collision.gameObject.tag == "Player")
                 {
-                    collision.gameObject.GetComponent<PlayerMovement>().BajarVida();
+                    collision.gameObject.GetComponent<PlayerMovement>().BajarVida(dañoBala);
                 }
             }
         }

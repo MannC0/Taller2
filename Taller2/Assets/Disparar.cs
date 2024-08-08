@@ -6,9 +6,10 @@ public class Disparar : MonoBehaviour
 {
     public Transform posicionGenerar;
     public GameObject bala;
-
     public float velocidadBala = 10f;
     public float ratioDeDisparo = 0.5f;
+    public int dañoBala;
+    public float area;
 
     private float tiempoTranscurrido = 1;
 
@@ -30,6 +31,7 @@ public class Disparar : MonoBehaviour
         GameObject bullet = Instantiate(bala, posicionGenerar.position, posicionGenerar.rotation);
         Rigidbody2D rigidbody = bullet.GetComponent<Rigidbody2D>();
         rigidbody.AddForce(posicionGenerar.right * velocidadBala, ForceMode2D.Impulse);
-        Destroy(bullet, 3f);
+        Destroy(bullet, area);
+        bullet.GetComponent<Bala>().dañoBala = dañoBala;
     }
 }

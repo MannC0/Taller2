@@ -5,17 +5,28 @@ using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    public int daño = 100;
+    public float defensa = 1;
+    public int regeneracionVida = 0;
+    public float velocidadMovimiento = 1f;
+    public int vida = 1000;
+    private int vidaMax;
+    public int area = 1;
+    public int nivel = 1;
+    public int siguienteNivel = 100;
+    public int incrementoNivel = 2;
     public GameObject cantidadDinero;
     public int dinero = 0;
-    public int vida = 15;
-    public float velocidadMovimiento = 5f;
+    public Camera camara;
+    public Rigidbody2D rigidbody;
+
+    private int experienciaActual = 0;
     private float tiempoEfectoPowerUp = 0;
     private float tiempoTranscurrido = 0;
+    private float tiempoTranscurridoRegeneracion = 0;
     private bool powerUpActivo = false;
-    public Camera camara;
     private DeathScreenController deathScreenController;
-
-    public Rigidbody2D rigidbody;
     private Animator animator;
 
     Vector2 movimiento;
@@ -27,6 +38,11 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         cantidadDinero.GetComponent<TMP_Text>().text = dinero.ToString();
         deathScreenController = FindObjectOfType<DeathScreenController>();
+
+        gameObject.GetComponent<Disparar>().area = area;
+        gameObject.GetComponent<Disparar>().dañoBala = daño;
+
+        vidaMax = vida;
     }
 
     void Update()
@@ -51,23 +67,47 @@ public class PlayerMovement : MonoBehaviour
                 gameObject.GetComponent<Disparar>().ratioDeDisparo = gameObject.GetComponent<Disparar>().ratioDeDisparo * 2;
             }
         }
+        if (regeneracionVida > 0)
+        {
+            if (vida < vidaMax)
+            {
+                tiempoTranscurridoRegeneracion += Time.deltaTime;
+                if (tiempoTranscurridoRegeneracion >= 1)
+                {
+                    vida += regeneracionVida;
+                }
+            }
+        }
     }
 
     private void FixedUpdate()
     {
-        rigidbody.MovePosition(rigidbody.position + movimiento.normalized * velocidadMovimiento * Time.fixedDeltaTime);
+        rigidbody.MovePosition(rigidbody.position + movimiento.normalized * velocidadMovimiento * 5 * Time.fixedDeltaTime);
 
         Vector2 direccion = posicionMouse - rigidbody.position;
         float angulo = Mathf.Atan2(direccion.y, direccion.x) *Mathf.Rad2Deg;
         rigidbody.rotation = angulo;
     }
 
-    public void BajarVida()
+    public void BajarVida(float dañoRecibido)
     {
-        vida = vida - 1;
-        if (vida == 0)
+        dañoRecibido = dañoRecibido / defensa;
+        vida = vida - (int)dañoRecibido;
+        if (vida <= 0)
         {
             Muerte();
+        }
+    }
+
+    public void AumentarExperiencia(int experienciaRecibida)
+    {
+        experienciaActual += experienciaRecibida;
+        if (experienciaActual > siguienteNivel)
+        {
+            nivel++;
+            experienciaActual = 0;
+            siguienteNivel = siguienteNivel * incrementoNivel;
+            //Generar carta
         }
     }
 

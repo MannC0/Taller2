@@ -6,12 +6,12 @@ public class Enemigo : MonoBehaviour
 {
     private GameObject jugador;
     public Rigidbody2D rigidbody;
-    public GameObject[] rupiasPrefabs;
+    public GameObject[] experienciaPrefabs;
     public GameObject[] powerUpPrefabs;
     public float velocidadMovimiento = 5f;
-    public int vida = 5;
+    public int vida = 200;
     public bool jefe;
-    public bool useAnimator;  // Add this line
+    public bool useAnimator;
     private Vector2 direccion;
     private Animator animacion;
     private GameManager victoryManager;
@@ -19,7 +19,7 @@ public class Enemigo : MonoBehaviour
     private void Start()
     {
         jugador = GameObject.FindGameObjectWithTag("Player");
-        if (useAnimator)  // Modify this line
+        if (useAnimator)
         {
             animacion = GetComponent<Animator>();
         }
@@ -45,11 +45,15 @@ public class Enemigo : MonoBehaviour
         }
     }
 
-    public void BajarVida()
+    public void BajarVida(int dañoRecibido)
     {
-        vida -= 1;
+        vida = vida - dañoRecibido;
+        if (vida <= 0)
+        {
+            MatarEnemigo();
+        }
 
-        if (useAnimator)  // Add this condition
+        if (useAnimator)
         {
             // Set the direction parameters for the blend tree
             animacion.SetFloat("DamageDirectionX", direccion.x);
@@ -58,27 +62,19 @@ public class Enemigo : MonoBehaviour
             // Trigger the damage animation
             animacion.SetTrigger("TakeDamage");
         }
-
-        if (vida <= 0)
-        {
-            MatarEnemigo();
-        }
     }
 
     void MatarEnemigo()
     {
-        int numeroAleatorioEfecto = Random.Range(0, 100);
-
-        if (numeroAleatorioEfecto > 40)
+        int numeroAleatorioExperiencia = Random.Range(0, 100);
+        int numeroGenerar = 0;
+        if (numeroAleatorioExperiencia < 65)
         {
-            int numeroAleatorioRupia = Random.Range(0, 100);
-            int numeroGenerar = 0;
-
-            if (numeroAleatorioRupia < 65)
-            {
-                numeroGenerar = 0;
-            }
-            else if (numeroAleatorioRupia < 95)
+            numeroGenerar = 0;
+        }
+        else
+        {
+            if (numeroAleatorioExperiencia < 95)
             {
                 numeroGenerar = 1;
             }
@@ -86,15 +82,9 @@ public class Enemigo : MonoBehaviour
             {
                 numeroGenerar = 2;
             }
-
-            GameObject rupia = Instantiate(rupiasPrefabs[numeroGenerar], transform.position, Quaternion.identity);
-            Destroy(rupia, 5f);
         }
-        else
-        {
-            GameObject powerUp = Instantiate(powerUpPrefabs[0], transform.position, Quaternion.identity);
-            Destroy(powerUp, 5f);
-        }
+        GameObject experiencia = Instantiate(experienciaPrefabs[numeroGenerar], transform.position, Quaternion.identity);
+        Destroy(experiencia, 5f);
 
         if (jefe && victoryManager != null)
         {

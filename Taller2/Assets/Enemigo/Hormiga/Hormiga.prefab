@@ -148,14 +148,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 5324990245816601561}
-  rupiasPrefabs:
-  - {fileID: 4835456033103974474, guid: 76a1624bfabd2f04792b138bb5e81163, type: 3}
-  - {fileID: 384012560329707698, guid: 064d8e6e8e6bbbd4ba30e0ca6ba059fd, type: 3}
-  - {fileID: 4016013278257688486, guid: ef9bfdffd2b1c0448ae163b63230045f, type: 3}
+  experienciaPrefabs:
+  - {fileID: 2321838456203659656, guid: adb40faffc0f33c41b2dd441ee057946, type: 3}
+  - {fileID: 805567834451839987, guid: f1edad4f953ae3c4ca1104599b56bde1, type: 3}
+  - {fileID: 7634457039391027429, guid: 2a7b60ba70daee2408230fb886818506, type: 3}
   powerUpPrefabs:
   - {fileID: 1785605551990458529, guid: 65492786178f8e24c83a9db4b377b9a2, type: 3}
   velocidadMovimiento: 5
-  vida: 5
+  vida: 100
   jefe: 0
   useAnimator: 1
 --- !u!114 &2268177991108117888
@@ -172,8 +172,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posicionGenerar: {fileID: 2155026280369192924}
   bala: {fileID: 6693377407571588375, guid: 528f05ccc6fc93546956babd7da82fa5, type: 3}
-  velocidadBala: 4.5
-  tiempoEntreDisparos: 2
+  "da\xF1oBala": 50
+  velocidadBala: 10
+  tiempoEntreDisparos: 1
   cantidadRafaga: 1
   tiempoRafaga: 0.2
 --- !u!50 &5324990245816601561

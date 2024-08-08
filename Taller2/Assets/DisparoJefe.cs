@@ -8,6 +8,7 @@ public class DisparoJefe : MonoBehaviour
     public GameObject bala;
     private GameObject jugador;
 
+    public int dañoBala;
     public float velocidadBala = 10f;
     public float tiempoEntreDisparos = 1f;
     public int cantidadRafaga = 5;
@@ -54,6 +55,7 @@ public class DisparoJefe : MonoBehaviour
                 bullet.transform.right = bullet.transform.position - transform.position;
                 rigidbody.AddForce(bullet.transform.right * velocidadBala, ForceMode2D.Impulse);
                 Destroy(bullet, 5f);
+                bullet.GetComponent<Bala>().dañoBala = dañoBala;
 
                 anguloActual += anguloIncremental;
             }
