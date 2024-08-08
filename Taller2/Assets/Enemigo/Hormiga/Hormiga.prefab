@@ -157,6 +157,7 @@ MonoBehaviour:
   velocidadMovimiento: 5
   vida: 5
   jefe: 0
+  useAnimator: 1
 --- !u!114 &2268177991108117888
 MonoBehaviour:
   m_ObjectHideFlags: 0

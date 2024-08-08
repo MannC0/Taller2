@@ -11,13 +11,17 @@ public class Enemigo : MonoBehaviour
     public float velocidadMovimiento = 5f;
     public int vida = 5;
     public bool jefe;
+    public bool useAnimator;  // Add this line
     private Vector2 direccion;
     private Animator animacion;
 
     private void Start()
     {
         jugador = GameObject.FindGameObjectWithTag("Player");
-        animacion = GetComponent<Animator>();
+        if (useAnimator)  // Modify this line
+        {
+            animacion = GetComponent<Animator>();
+        }
     }
 
     private void Update()
@@ -43,12 +47,15 @@ public class Enemigo : MonoBehaviour
     {
         vida -= 1;
 
-        // Set the direction parameters for the blend tree
-        animacion.SetFloat("DamageDirectionX", direccion.x);
-        animacion.SetFloat("DamageDirectionY", direccion.y);
+        if (useAnimator)  // Add this condition
+        {
+            // Set the direction parameters for the blend tree
+            animacion.SetFloat("DamageDirectionX", direccion.x);
+            animacion.SetFloat("DamageDirectionY", direccion.y);
 
-        // Trigger the damage animation
-        animacion.SetTrigger("TakeDamage");
+            // Trigger the damage animation
+            animacion.SetTrigger("TakeDamage");
+        }
 
         if (vida <= 0)
         {
