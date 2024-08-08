@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private float tiempoTranscurrido = 0;
     private bool powerUpActivo = false;
     public Camera camara;
+    private DeathScreenController deathScreenController;
 
     public Rigidbody2D rigidbody;
     private Animator animator;
@@ -25,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         cantidadDinero.GetComponent<TMP_Text>().text = dinero.ToString();
+        deathScreenController = FindObjectOfType<DeathScreenController>();
     }
 
     void Update()
@@ -65,8 +67,13 @@ public class PlayerMovement : MonoBehaviour
         vida = vida - 1;
         if (vida == 0)
         {
-            Destroy(gameObject);
+            Muerte();
         }
+    }
+
+    void Muerte()
+    {
+        deathScreenController.ShowDeathScreen();
     }
 
     public void AumentarDinero(int ganancia)
