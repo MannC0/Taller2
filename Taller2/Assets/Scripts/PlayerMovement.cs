@@ -6,7 +6,7 @@ using TMPro;
 public class PlayerMovement : MonoBehaviour
 {
 
-    public int daño = 100;
+    public int ataque = 100;
     public float defensa = 1;
     public int regeneracionVida = 0;
     public float velocidadMovimiento = 1f;
@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         deathScreenController = FindObjectOfType<DeathScreenController>();
 
         gameObject.GetComponent<Disparar>().area = area;
-        gameObject.GetComponent<Disparar>().dañoBala = daño;
+        gameObject.GetComponent<Disparar>().dañoBala = ataque;
         vidaMax = vida;
     }
 
@@ -112,7 +112,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
     void Muerte()
     {
         deathScreenController.ShowDeathScreen();
@@ -124,11 +123,69 @@ public class PlayerMovement : MonoBehaviour
         cantidadDinero.GetComponent<TMP_Text>().text = dinero.ToString();
     }
 
-    public void AumentarDaño()
+    public void ElegirCarta(string efecto)
     {
-        daño = (int)(daño * 1.2f);
-        gameObject.GetComponent<Disparar>().dañoBala = daño;
-        carta.SetActive(false);
+        carta.SetActive(true);
+        switch (efecto)
+        {
+            case "Ataque":
+                AumentarAtaque();
+                break;
+            case "Defensa":
+                AumentarDefensa();
+                break;
+            case "Vida":
+                AumentarVida();
+                break;
+            case "Regeneracion":
+                AumentarRegeneracion();
+                break;
+            case "Area":
+                AumentarArea();
+                break;
+            case "Velocidad":
+                AumentarVelocidad();
+                break;
+        }
+    }
+
+    public void AumentarAtaque()
+    {
+        ataque = ataque * 2;
+        gameObject.GetComponent<Disparar>().dañoBala = ataque;
+        Debug.Log("Ataque");
+    }
+
+    public void AumentarDefensa()
+    {
+        defensa = defensa * 1.5f;
+        Debug.Log("Defensa");
+    }
+
+    public void AumentarVida()
+    {
+        vidaMax = vidaMax + 500;
+        vida = vida + 500;
+        Debug.Log("Vida");
+    }
+
+    public void AumentarRegeneracion()
+    {
+        regeneracionVida = regeneracionVida + 50;
+        Debug.Log("Regeneracion");
+    }
+
+    public void AumentarArea()
+    {
+        area = area * 2;
+        gameObject.GetComponent<Disparar>().area = area;
+        Debug.Log("Area");
+    }
+
+    public void AumentarVelocidad()
+    {
+        velocidadMovimiento = velocidadMovimiento * 2;
+        Debug.Log("Velocidad");
     }
 
     public void PowerUp(int numPowerUp)
