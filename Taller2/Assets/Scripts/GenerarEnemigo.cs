@@ -66,9 +66,6 @@ public class GenerarEnemigo : MonoBehaviour
                 }
             }
         }
-
-        // Debug info to see what's happening in the Update loop
-        Debug.Log($"Horde: {hordaActual}, Tiempo Total: {tiempoTranscurridoTotal}, Tiempo Temporal: {tiempoTranscurridoTemporal}, Termina Horde: {terminaHorda}, Boss Spawned: {bossSpawned}");
     }
 
     void CrearJefe()
