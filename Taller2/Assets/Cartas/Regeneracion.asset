@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Regeneracion
   m_EditorClassIdentifier: 
   propiedades:
-    sprite: {fileID: 21300000, guid: 0b1c51aa29080404099010655e26cc23, type: 3}
-    descripcion: Regeneracion de Vida
+    imagenEfecto: {fileID: 21300000, guid: 0b1c51aa29080404099010655e26cc23, type: 3}
+    textoEfecto: Aumentar Regeneracion
     efecto: Regeneracion

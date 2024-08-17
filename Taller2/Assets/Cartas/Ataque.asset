@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Ataque
   m_EditorClassIdentifier: 
   propiedades:
-    sprite: {fileID: 21300000, guid: 79068e8ffb1883e47a8e3b922f445eae, type: 3}
-    descripcion: Aumentar Ataque
+    imagenEfecto: {fileID: 21300000, guid: 79068e8ffb1883e47a8e3b922f445eae, type: 3}
+    textoEfecto: Aumentar Ataque
     efecto: Ataque

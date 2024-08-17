@@ -7,15 +7,16 @@ using TMPro;
 public class CargarCarta : MonoBehaviour
 {
     public Cartas[] cartas;
-    public Image imagen;
-    public GameObject texto;
+    public GameObject textoCarta;
+    public Image imagenCarta;
     public string efecto;
     
-    void Start()
+
+    public void CargarDatos(int random)
     {
-        int random = Random.Range(0, cartas.Length);
-        imagen.sprite = cartas[random].propiedades.sprite;
-        texto.GetComponent<TMP_Text>().text = cartas[random].propiedades.descripcion.ToString();
-        efecto = cartas[random].propiedades.efecto; 
+
+        textoCarta.GetComponent<TMP_Text>().text = cartas[random].propiedades.textoEfecto.ToString();
+        imagenCarta.sprite = cartas[random].propiedades.imagenEfecto;
+        efecto = cartas[random].propiedades.efecto;
     }
 }

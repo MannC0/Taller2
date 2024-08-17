@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Defensa
   m_EditorClassIdentifier: 
   propiedades:
-    sprite: {fileID: 21300000, guid: abab41c50ad37fe41a6b1568ccaede25, type: 3}
-    descripcion: AumentarDefensa
+    imagenEfecto: {fileID: 21300000, guid: abab41c50ad37fe41a6b1568ccaede25, type: 3}
+    textoEfecto: Aumentar Defensa
     efecto: Defensa
