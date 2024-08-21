@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public int siguienteNivel = 100;
     public int incrementoNivel = 2;
     private int experienciaActual = 0;
+    public Slider experienceBar;
 
     public GameObject[] cartas;
     public GameObject cantidadDinero;
@@ -30,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     private DeathScreenController deathScreenController;
 
+    public TMP_Text currentHPText;
+    public TMP_Text maxHPText;
 
     Vector2 movimiento;
     Vector2 posicionMouse;
@@ -44,6 +48,10 @@ public class PlayerMovement : MonoBehaviour
         gameObject.GetComponent<Disparar>().area = area;
         gameObject.GetComponent<Disparar>().dañoBala = daño;
         vidaMax = vida;
+        experienceBar.maxValue = siguienteNivel;
+        experienceBar.value = experienciaActual;
+
+        UpdateHealthUI();
     }
 
     void Update()
@@ -76,9 +84,11 @@ public class PlayerMovement : MonoBehaviour
                 if (tiempoTranscurridoRegeneracion >= 1)
                 {
                     vida += regeneracionVida;
+                    UpdateHealthUI();
                 }
             }
         }
+        UpdateHealthUI();
     }
 
     private void FixedUpdate()
@@ -94,6 +104,7 @@ public class PlayerMovement : MonoBehaviour
     {
         dañoRecibido = dañoRecibido / defensa;
         vida = vida - (int)dañoRecibido;
+        UpdateHealthUI();
         if (vida <= 0)
         {
             Muerte();
@@ -103,12 +114,14 @@ public class PlayerMovement : MonoBehaviour
     public void AumentarExperiencia(int experienciaRecibida)
     {
         experienciaActual += experienciaRecibida;
+        experienceBar.value = experienciaActual;
         if (experienciaActual > siguienteNivel)
         {
             Time.timeScale = 0;
             nivel++;
             experienciaActual = 0;
             siguienteNivel = siguienteNivel * incrementoNivel;
+            experienceBar.maxValue = siguienteNivel;
             int randomAnterior = -1;
             int randomTrasAnterior = -1;
             for (int i = 0; i < 3; i++)
@@ -181,6 +194,7 @@ public class PlayerMovement : MonoBehaviour
         int incrementoVida = (int)(vidaMax * 0.5f);
         vidaMax = vidaMax + incrementoVida;
         vida = vida + incrementoVida;
+        UpdateHealthUI();
         Debug.Log("Vida");
     }
 
@@ -227,5 +241,10 @@ public class PlayerMovement : MonoBehaviour
                 tiempoTranscurrido = 0;
             }
         }
+    }
+    private void UpdateHealthUI()
+    {
+        currentHPText.text = vida.ToString();
+        maxHPText.text = vidaMax.ToString();
     }
 }

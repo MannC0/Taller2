@@ -180,6 +180,10 @@ MonoBehaviour:
   - {fileID: 2321838456203659656, guid: adb40faffc0f33c41b2dd441ee057946, type: 3}
   powerUpPrefabs:
   - {fileID: 1785605551990458529, guid: 65492786178f8e24c83a9db4b377b9a2, type: 3}
+  dineroPrefabs:
+  - {fileID: 4016013278257688486, guid: ef9bfdffd2b1c0448ae163b63230045f, type: 3}
+  - {fileID: 384012560329707698, guid: 064d8e6e8e6bbbd4ba30e0ca6ba059fd, type: 3}
+  - {fileID: 4835456033103974474, guid: 76a1624bfabd2f04792b138bb5e81163, type: 3}
   velocidadMovimiento: 1.5
   vida: 5000
   jefe: 1
@@ -231,7 +235,7 @@ Transform:
   m_GameObject: {fileID: 8215037575044307328}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -7.83, z: 0}
+  m_LocalPosition: {x: -0, y: -7.97, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

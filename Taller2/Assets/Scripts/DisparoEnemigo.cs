@@ -46,10 +46,29 @@ public class DisparoEnemigo : MonoBehaviour
 
         for (int i = 0; i < cantidadRafaga; i++)
         {
+            if (jugador == null)
+            {
+                Debug.LogError("jugador es null");
+                yield break; // Salir de la coroutine si jugador es null
+            }
+
+            if (posicionGenerar == null)
+            {
+                Debug.LogError("posicionGenerar es null");
+                yield break; // Salir de la coroutine si posicionGenerar es null
+            }
+
             Vector2 direccionDisparo = jugador.transform.position - transform.position;
 
             GameObject bullet = Instantiate(bala, posicionGenerar.position, posicionGenerar.rotation);
             Rigidbody2D rigidbody = bullet.GetComponent<Rigidbody2D>();
+
+            if (rigidbody == null)
+            {
+                Debug.LogError("Rigidbody2D no encontrado en la bala");
+                yield break; // Salir de la coroutine si Rigidbody2D no se encuentra
+            }
+
             bullet.transform.right = direccionDisparo;
             rigidbody.AddForce(bullet.transform.right * velocidadBala, ForceMode2D.Impulse);
             Destroy(bullet, 5f);

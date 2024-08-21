@@ -8,6 +8,7 @@ public class Enemigo : MonoBehaviour
     public Rigidbody2D rigidbody;
     public GameObject[] experienciaPrefabs;
     public GameObject[] powerUpPrefabs;
+    public GameObject[] dineroPrefabs;
     public float velocidadMovimiento = 5f;
     public int vida = 200;
     public bool jefe;
@@ -66,15 +67,17 @@ public class Enemigo : MonoBehaviour
 
     void MatarEnemigo()
     {
-        int numeroAleatorioExperiencia = Random.Range(0, 100);
-        int numeroGenerar = 0;
-        if (numeroAleatorioExperiencia < 65)
+        bool soltarExperiencia = Random.value > 0.5f;
+
+        if (soltarExperiencia)
         {
-            numeroGenerar = 0;
-        }
-        else
-        {
-            if (numeroAleatorioExperiencia < 95)
+            int numeroAleatorioExperiencia = Random.Range(0, 100);
+            int numeroGenerar = 0;
+            if (numeroAleatorioExperiencia < 65)
+            {
+                numeroGenerar = 0;
+            }
+            else if (numeroAleatorioExperiencia < 95)
             {
                 numeroGenerar = 1;
             }
@@ -82,9 +85,35 @@ public class Enemigo : MonoBehaviour
             {
                 numeroGenerar = 2;
             }
+            GameObject experiencia = Instantiate(experienciaPrefabs[numeroGenerar], transform.position, Quaternion.identity);
+            Destroy(experiencia, 5f);
         }
-        GameObject experiencia = Instantiate(experienciaPrefabs[numeroGenerar], transform.position, Quaternion.identity);
-        Destroy(experiencia, 5f);
+        else
+        {
+            int numeroAleatorioDinero = Random.Range(0, 100);
+            int numeroGenerar = 0;
+            if (numeroAleatorioDinero < 65)
+            {
+                numeroGenerar = 0;
+            }
+            else if (numeroAleatorioDinero < 95)
+            {
+                numeroGenerar = 1;
+            }
+            else
+            {
+                numeroGenerar = 2;
+            }
+            GameObject dinero = Instantiate(dineroPrefabs[numeroGenerar], transform.position, Quaternion.identity);
+            Destroy(dinero, 5f);
+        }
+
+        // Añadir el sistema de aparición del power-up
+        if (Random.value < 0.3f) // 30% de probabilidad
+        {
+            GameObject powerUp = Instantiate(powerUpPrefabs[0], transform.position, Quaternion.identity); // Asegúrate de que powerUpPrefabs[0] sea tu prefab de poder
+            Destroy(powerUp, 5f);
+        }
 
         if (jefe && victoryManager != null)
         {
