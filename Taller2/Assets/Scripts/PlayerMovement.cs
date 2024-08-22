@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     public int incrementoNivel = 2;
     private int experienciaActual = 0;
     public Slider experienceBar;
+    public Image cartaSeleccionadaImage; // Referencia a la imagen de la carta seleccionada
+    public Sprite[] spritesCartas; // Array para almacenar los sprites de las cartas
 
     public GameObject[] cartas;
     public GameObject cantidadDinero;
@@ -146,6 +148,18 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void HealPlayer(int healAmount)
+    {
+        if (vida < vidaMax) // Check if player can be healed
+        {
+            vida += healAmount; // Heal the player
+            if (vida > vidaMax) // Ensure health does not exceed maximum
+            {
+                vida = vidaMax;
+            }
+            UpdateHealthUI(); // Update the UI to reflect the new health
+        }
+    }
     public void AumentarDinero(int ganancia)
     {
         dinero += ganancia;
@@ -155,6 +169,7 @@ public class PlayerMovement : MonoBehaviour
     public void ElegirEfecto(int numCarta)
     {
         string efecto = cartas[numCarta].GetComponent<CargarCarta>().efecto;
+        //cartaSeleccionadaImage.sprite = spritesCartas[numCarta]; // Actualiza la imagen de la carta seleccionada
         Time.timeScale = 1;
         for (int i = 0; i < 3; i++)
         {

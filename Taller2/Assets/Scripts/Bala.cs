@@ -6,26 +6,36 @@ public class Bala : MonoBehaviour
 {
     public GameObject efectoExplosion;
     public int dañoBala;
-    public string objetivo;
 
+    // Array of target tags
+    public string[] objetivos; // You can set this in the Inspector
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == objetivo)
+        Debug.Log("Collided with: " + collision.gameObject.name);
+
+        foreach (string objetivo in objetivos)
         {
-            if (collision.gameObject.tag == "Enemigo")
+            if (collision.gameObject.CompareTag(objetivo))
             {
-                collision.gameObject.GetComponent<Enemigo>().BajarVida(dañoBala);
-            }
-            else 
-            {
-                if (collision.gameObject.tag == "Player")
+                // Call the respective method based on the target type
+                if (collision.gameObject.CompareTag("Enemigo"))
+                {
+                    collision.gameObject.GetComponent<Enemigo>().BajarVida(dañoBala);
+                }
+                else if (collision.gameObject.CompareTag("Player"))
                 {
                     collision.gameObject.GetComponent<PlayerMovement>().BajarVida(dañoBala);
+                }
+                else if (collision.gameObject.CompareTag("GoldenBarrel"))
+                {
+                    Debug.Log("Hit GoldenBarrel!");
+                    collision.gameObject.GetComponent<GoldenBarrel>().BajarVida(dañoBala);
                 }
             }
         }
 
+        // Create explosion effect and destroy the bullet
         GameObject efecto = Instantiate(efectoExplosion, transform.position, Quaternion.identity);
         Destroy(efecto, 1f);
         Destroy(gameObject);

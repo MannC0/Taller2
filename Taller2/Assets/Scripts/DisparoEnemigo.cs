@@ -11,13 +11,12 @@ public class DisparoEnemigo : MonoBehaviour
     public int dañoBala;
     public float velocidadBala = 10f;
     public float tiempoEntreDisparos = 1f;
-    public int cantidadRafaga = 5; 
+    public int cantidadRafaga = 5;
     public float tiempoRafaga = 0.2f;
     private bool atacando = false;
 
     private void Start()
     {
-        // Try to find the player by tag or name
         jugador = GameObject.FindWithTag("Player");
         if (jugador == null)
         {
@@ -27,7 +26,7 @@ public class DisparoEnemigo : MonoBehaviour
 
     private void Update()
     {
-        if (atacando == false && (transform.position - jugador.transform.position).magnitude < 7)
+        if (!atacando && (transform.position - jugador.transform.position).magnitude < 7)
         {
             Atacar();
         }
@@ -41,8 +40,6 @@ public class DisparoEnemigo : MonoBehaviour
     private IEnumerator Disparo()
     {
         atacando = true;
-
-
 
         for (int i = 0; i < cantidadRafaga; i++)
         {
@@ -72,13 +69,21 @@ public class DisparoEnemigo : MonoBehaviour
             bullet.transform.right = direccionDisparo;
             rigidbody.AddForce(bullet.transform.right * velocidadBala, ForceMode2D.Impulse);
             Destroy(bullet, 5f);
-            bullet.GetComponent<Bala>().dañoBala = dañoBala;
+
+            // Check if the bullet is of type DisparoPerseguido and set the damage value
+            if (bullet.CompareTag("DisparoPerseguido")) // Ensure your bullet prefab has this tag
+            {
+                bullet.GetComponent<DisparoPerseguido>().dañoBala = dañoBala; // Set the damage value
+            }
+            else
+            {
+                bullet.GetComponent<Bala>().dañoBala = dañoBala; // Set the damage value for regular bullets
+            }
 
             yield return new WaitForSeconds(tiempoRafaga);
         }
 
         yield return new WaitForSeconds(tiempoEntreDisparos);
         atacando = false;
-
     }
 }

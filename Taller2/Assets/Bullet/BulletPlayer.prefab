@@ -162,4 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   efectoExplosion: {fileID: 7836816802154175058, guid: 3a5b53f15562dbb4d946e16fab48c3fc, type: 3}
-  objetivo: Enemigo
+  "da\xF1oBala": 0
+  objetivos:
+  - Enemigo
+  - GoldenBarrel

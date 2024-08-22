@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6977791567840364416}
   m_Layer: 8
   m_Name: BulletEnemy
-  m_TagString: Untagged
+  m_TagString: DisparoPerseguido
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -165,3 +165,4 @@ MonoBehaviour:
   objetivo: Player
   velocidad: 7.2
   tiempoVida: 2
+  "da\xF1oBala": 50

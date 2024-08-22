@@ -10,7 +10,7 @@ public class CargarCarta : MonoBehaviour
     public GameObject textoCarta;
     public Image imagenCarta;
     public string efecto;
-    
+
 
     public void CargarDatos(int random)
     {

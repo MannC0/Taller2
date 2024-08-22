@@ -8,7 +8,7 @@ public class DisparoPerseguido : MonoBehaviour
     public string objetivo;
     public float velocidad = 10f;
     public float tiempoVida = 10f;
-    public int daño = 1;
+    public int dañoBala = 1;
     private Rigidbody2D rigidbody;
     private GameObject jugador;
 
@@ -53,11 +53,11 @@ public class DisparoPerseguido : MonoBehaviour
         {
             if (collision.gameObject.tag == "Enemigo")
             {
-                collision.gameObject.GetComponent<Enemigo>().BajarVida(daño);
+                collision.gameObject.GetComponent<Enemigo>().BajarVida(dañoBala);
             }
             else if (collision.gameObject.tag == "Player")
             {
-                collision.gameObject.GetComponent<PlayerMovement>().BajarVida(daño);
+                collision.gameObject.GetComponent<PlayerMovement>().BajarVida(dañoBala);
             }
 
             GameObject efecto = Instantiate(efectoExplosion, transform.position, Quaternion.identity);
