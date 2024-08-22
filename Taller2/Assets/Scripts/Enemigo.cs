@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemigo : MonoBehaviour
@@ -16,6 +15,7 @@ public class Enemigo : MonoBehaviour
     private Vector2 direccion;
     private Animator animacion;
     private GameManager victoryManager;
+    private bool isDead = false;  // New flag to track if the enemy is dead
 
     private void Start()
     {
@@ -29,7 +29,7 @@ public class Enemigo : MonoBehaviour
 
     private void Update()
     {
-        if (jugador != null)
+        if (!isDead && jugador != null)
         {
             int ajuste = 0;
             direccion = (jugador.transform.position - transform.position).normalized;
@@ -41,28 +41,44 @@ public class Enemigo : MonoBehaviour
             }
 
             rigidbody.rotation = angulo + ajuste;
-
             rigidbody.velocity = direccion * velocidadMovimiento;
         }
     }
 
     public void BajarVida(int dañoRecibido)
     {
-        vida = vida - dañoRecibido;
+        if (isDead) return;  // Prevents further actions if the enemy is dead
+
+        vida -= dañoRecibido;
         if (vida <= 0)
         {
-            MatarEnemigo();
+            if (useAnimator)
+            {
+                isDead = true;  // Set the flag to prevent actions during the death animation
+                animacion.SetTrigger("TriggerDeath");
+                StartCoroutine(WaitForDeathAnimation());
+            }
+            else
+            {
+                MatarEnemigo();
+            }
         }
-
-        if (useAnimator)
+        else
         {
-            // Set the direction parameters for the blend tree
-            animacion.SetFloat("DamageDirectionX", direccion.x);
-            animacion.SetFloat("DamageDirectionY", direccion.y);
-
-            // Trigger the damage animation
-            animacion.SetTrigger("TakeDamage");
+            if (useAnimator)
+            {
+                animacion.SetFloat("DamageDirectionX", direccion.x);
+                animacion.SetFloat("DamageDirectionY", direccion.y);
+                animacion.SetTrigger("TakeDamage");
+            }
         }
+    }
+
+    private IEnumerator WaitForDeathAnimation()
+    {
+        // Wait until the current animation state ends
+        yield return new WaitForSeconds(animacion.GetCurrentAnimatorStateInfo(0).length);
+        MatarEnemigo();
     }
 
     void MatarEnemigo()
@@ -108,10 +124,9 @@ public class Enemigo : MonoBehaviour
             Destroy(dinero, 5f);
         }
 
-        // Añadir el sistema de aparición del power-up
-        if (Random.value < 0.3f) // 30% de probabilidad
+        if (Random.value < 0.3f)
         {
-            GameObject powerUp = Instantiate(powerUpPrefabs[0], transform.position, Quaternion.identity); // Asegúrate de que powerUpPrefabs[0] sea tu prefab de poder
+            GameObject powerUp = Instantiate(powerUpPrefabs[0], transform.position, Quaternion.identity);
             Destroy(powerUp, 5f);
         }
 
