@@ -27,10 +27,10 @@ public class Bala : MonoBehaviour
                 {
                     collision.gameObject.GetComponent<PlayerMovement>().BajarVida(dañoBala);
                 }
-                else if (collision.gameObject.CompareTag("GoldenBarrel"))
+                else if (collision.gameObject.CompareTag("GoldenBarrel")) // Change to "Barrel"
                 {
-                    Debug.Log("Hit GoldenBarrel!");
-                    collision.gameObject.GetComponent<GoldenBarrel>().BajarVida(dañoBala);
+                    Debug.Log("Hit Barrel!");
+                    collision.gameObject.GetComponent<BarrelHealth>().BajarVida(dañoBala); // Call BajarVida from BarrelHealth
                 }
             }
         }
