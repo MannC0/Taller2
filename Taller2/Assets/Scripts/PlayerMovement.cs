@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public float velocidadMovimiento = 1f;
     public int vida = 1000;
     private int vidaMax;
-    public int area = 1;
+    public float area = 1;
     public int nivel = 1;
     public int siguienteNivel = 100;
     public int incrementoNivel = 2;
@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public Slider experienceBar;
     public Image cartaSeleccionadaImage; // Referencia a la imagen de la carta seleccionada
     public Sprite[] spritesCartas; // Array para almacenar los sprites de las cartas
+    private float tiempoDesdeRegeneracion = 0f;
 
     public GameObject[] cartas;
     public GameObject cantidadDinero;
@@ -52,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
         vidaMax = vida;
         experienceBar.maxValue = siguienteNivel;
         experienceBar.value = experienciaActual;
+        cantidadDinero.GetComponent<TMP_Text>().text = dinero.ToString(); // Initialize money display
 
         UpdateHealthUI();
     }
@@ -62,11 +64,12 @@ public class PlayerMovement : MonoBehaviour
         movimiento.y = Input.GetAxisRaw("Vertical");
 
         animator.SetFloat("Horizontal", movimiento.x);
-        animator.SetFloat("Vertical", movimiento .y);
+        animator.SetFloat("Vertical", movimiento.y);
         animator.SetFloat("Velocidad", movimiento.sqrMagnitude);
 
         posicionMouse = camara.ScreenToWorldPoint(Input.mousePosition);
 
+        // Handle power-up effects timing
         if (powerUpActivo == true)
         {
             tiempoTranscurrido += Time.deltaTime;
@@ -78,18 +81,26 @@ public class PlayerMovement : MonoBehaviour
                 gameObject.GetComponent<Disparar>().ratioDeDisparo = gameObject.GetComponent<Disparar>().ratioDeDisparo * 2;
             }
         }
+
+        // Handle health regeneration
         if (regeneracionVida > 0)
         {
             if (vida < vidaMax)
             {
-                tiempoTranscurridoRegeneracion += Time.deltaTime;
-                if (tiempoTranscurridoRegeneracion >= 1)
+                tiempoDesdeRegeneracion += Time.deltaTime;
+                if (tiempoDesdeRegeneracion >= 3) // Check if 3 seconds have passed
                 {
-                    vida += regeneracionVida;
+                    vida += 5 * regeneracionVida; // Heal based on the number of regeneration buffs
+                    if (vida > vidaMax) // Ensure health does not exceed maximum
+                    {
+                        vida = vidaMax;
+                    }
                     UpdateHealthUI();
+                    tiempoDesdeRegeneracion = 0; // Reset the timer
                 }
             }
         }
+
         UpdateHealthUI();
     }
 
@@ -163,7 +174,7 @@ public class PlayerMovement : MonoBehaviour
     public void AumentarDinero(int ganancia)
     {
         dinero += ganancia;
-        cantidadDinero.GetComponent<TMP_Text>().text = dinero.ToString();
+        cantidadDinero.GetComponent<TMP_Text>().text = dinero.ToString(); // Update UI text
     }
 
     public void ElegirEfecto(int numCarta)
@@ -200,7 +211,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void AumentarArea()
     {
-        area = area * 2;
+        area = area * 1.5f;
         gameObject.GetComponent<Disparar>().area = area;
         Debug.Log("Area");
     }
@@ -215,19 +226,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void Aumentardaño()
     {
-        daño = (int)(daño * 1.5f);
+        daño = (int)(daño * 1.2f);
         gameObject.GetComponent<Disparar>().dañoBala = daño;
         Debug.Log("Ataque");
     }
     public void AumentarVelocidad()
     {
-        velocidadMovimiento = velocidadMovimiento * 1.3f;
+        velocidadMovimiento = velocidadMovimiento * 1.2f;
         Debug.Log("Velocidad");
     }
 
     public void AumentarRegeneracion()
     {
-        regeneracionVida = regeneracionVida + 150;
+        regeneracionVida = regeneracionVida + 1;
         Debug.Log("Regeneracion");
     }
     public void AumentarDefensa()

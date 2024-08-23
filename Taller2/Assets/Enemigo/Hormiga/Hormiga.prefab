@@ -176,7 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posicionGenerar: {fileID: 2155026280369192924}
   bala: {fileID: 6693377407571588375, guid: 528f05ccc6fc93546956babd7da82fa5, type: 3}
-  "da\xF1oBala": 50
+  "da\xF1oBala": 100
   velocidadBala: 10
   tiempoEntreDisparos: 1
   cantidadRafaga: 1

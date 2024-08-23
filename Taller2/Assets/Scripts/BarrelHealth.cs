@@ -1,45 +1,28 @@
-using System.Collections;
 using UnityEngine;
 
 public class BarrelHealth : MonoBehaviour
 {
-    public int vida = 100; // Set initial health for the barrel
-    private bool isAlive = true;
+    public int maxHealth = 100;  // Maximum health of the barrel
+    private int currentHealth;  // Current health of the barrel
 
-    public void BajarVida(int dañoRecibido)
+    void Start()
     {
-        if (!isAlive) return;
+        // Initialize the barrel's health to the maximum value
+        currentHealth = maxHealth;
+    }
 
-        vida -= dañoRecibido;
-        Debug.Log("Barrel Health: " + vida); // Log current health
+    // Method to decrease the barrel's health
+    public void BajarVida(int damage)
+    {
+        // Decrease the barrel's health by the damage amount
+        currentHealth -= damage;
 
-        if (vida <= 0)
+        // Check if the barrel's health has reached zero
+        if (currentHealth <= 0)
         {
-            MatarBarrel();
+            currentHealth = 0;
+            FindObjectOfType<GoldenBarrel>().OpenStore(); // Open the store when the barrel is destroyed
+            gameObject.SetActive(false); // Deactivate the barrel
         }
-    }
-
-    void MatarBarrel()
-    {
-        if (!isAlive) return;
-        isAlive = false; // Mark barrel as dead
-
-        // Deactivate the barrel GameObject
-        gameObject.SetActive(false); // Disable the barrel
-
-        // Start the respawn coroutine
-        StartCoroutine(RespawnBarrel());
-    }
-
-    private IEnumerator RespawnBarrel()
-    {
-        yield return new WaitForSeconds(30f); // Wait for 30 seconds
-
-        // Reset the barrel's health
-        vida = 100;
-        isAlive = true; // Mark the barrel as alive again
-
-        // Reactivate the barrel in the scene
-        gameObject.SetActive(true);
     }
 }
