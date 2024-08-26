@@ -17,6 +17,8 @@ public class Enemigo : MonoBehaviour
     private GameManager victoryManager;
     private bool isDead = false;  // New flag to track if the enemy is dead
 
+    bool isFreeze = false;
+
     private void Start()
     {
         jugador = GameObject.FindGameObjectWithTag("Player");
@@ -29,11 +31,12 @@ public class Enemigo : MonoBehaviour
 
     private void Update()
     {
-        if (!isDead && jugador != null)
+        if (!isDead && jugador != null && !isFreeze)
         {
             int ajuste = 0;
             direccion = (jugador.transform.position - transform.position).normalized;
             float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
+            animacion.SetFloat("Horizontal", 1);
 
             if (jefe)
             {
@@ -43,20 +46,26 @@ public class Enemigo : MonoBehaviour
             rigidbody.rotation = angulo + ajuste;
             rigidbody.velocity = direccion * velocidadMovimiento;
         }
+
+        if (isDead)
+        {
+            transform.position = transform.position;
+        }
     }
 
     public void BajarVida(int dañoRecibido)
     {
         if (isDead) return;  // Prevents further actions if the enemy is dead
 
+        isFreeze = true;   
         vida -= dañoRecibido;
         if (vida <= 0)
         {
             if (useAnimator)
             {
-                isDead = true;  // Set the flag to prevent actions during the death animation
                 animacion.SetTrigger("TriggerDeath");
                 StartCoroutine(WaitForDeathAnimation());
+                isDead = true;  // Set the flag to prevent actions during the death animation
             }
             else
             {
@@ -71,7 +80,14 @@ public class Enemigo : MonoBehaviour
                 animacion.SetFloat("DamageDirectionY", direccion.y);
                 animacion.SetTrigger("TakeDamage");
             }
+
+            Invoke("ReturnToMove", .3f);
         }
+    }
+
+    void ReturnToMove()
+    {
+        isFreeze = false;
     }
 
     private IEnumerator WaitForDeathAnimation()
@@ -84,6 +100,7 @@ public class Enemigo : MonoBehaviour
     void MatarEnemigo()
     {
         bool soltarExperiencia = Random.value > 0.5f;
+     
 
         if (soltarExperiencia)
         {

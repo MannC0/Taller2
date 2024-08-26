@@ -21,6 +21,7 @@ public class Disparar : MonoBehaviour
             if (tiempoTranscurrido > ratioDeDisparo)
             {
                 Disparo();
+                Debug.Log("empece a disparar");
                 tiempoTranscurrido = 0;
             }
         }
@@ -28,10 +29,12 @@ public class Disparar : MonoBehaviour
 
     void Disparo()
     {
+        Debug.Log("dispare");
         GameObject bullet = Instantiate(bala, posicionGenerar.position, posicionGenerar.rotation);
         Rigidbody2D rigidbody = bullet.GetComponent<Rigidbody2D>();
         rigidbody.AddForce(posicionGenerar.right * velocidadBala, ForceMode2D.Impulse);
         Destroy(bullet, area / 4);
         bullet.GetComponent<Bala>().dañoBala = dañoBala;
+        Debug.Log("termine de disparar");
     }
 }
