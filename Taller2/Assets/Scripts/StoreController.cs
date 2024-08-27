@@ -31,15 +31,12 @@ public class GoldenBarrel : MonoBehaviour
         PlayerMovement player = FindObjectOfType<PlayerMovement>();
         if (player != null)
         {
-            // Debug log to check current money
-            Debug.Log("Player dinero: " + player.dinero);
-            Debug.Log("Item cost: " + itemCost);
-
             // Check if the player has enough money before performing the transaction
             if (player.dinero < itemCost)
             {
-                Debug.Log("Not enough money to buy the item.");
+                // Display "Insuficientes Fondos" message
                 messageText.text = "Insuficientes Fondos!";
+                Debug.Log("Not enough money to buy the item.");
             }
             else
             {
@@ -58,18 +55,14 @@ public class GoldenBarrel : MonoBehaviour
             Debug.LogError("PlayerMovement not found!");
         }
 
-        StartCoroutine(ClearMessage(3f));
-        CloseStore();
+        StartCoroutine(ClearMessageAndCloseStore(3f));
     }
 
-
-
-
-
-    private IEnumerator ClearMessage(float delay)
+    private IEnumerator ClearMessageAndCloseStore(float delay)
     {
         yield return new WaitForSecondsRealtime(delay); // Use WaitForSecondsRealtime to respect the time scale
         messageText.text = "";
+        CloseStore(); // Close the store after the message is cleared
     }
 
     public void CloseStore()
