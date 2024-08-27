@@ -36,14 +36,19 @@ public class Enemigo : MonoBehaviour
             int ajuste = 0;
             direccion = (jugador.transform.position - transform.position).normalized;
             float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
-            animacion.SetFloat("Horizontal", 1);
 
-            if (jefe)
+            // Only set animation parameters if useAnimator is true
+            if (useAnimator)
             {
-                ajuste = 90;
+                animacion.SetFloat("Horizontal", 1);
             }
 
-            rigidbody.rotation = angulo + ajuste;
+            /*if (jefe)
+            {
+                ajuste = 180;
+            }
+
+            rigidbody.rotation = angulo + ajuste; */
             rigidbody.velocity = direccion * velocidadMovimiento;
         }
 
@@ -52,6 +57,7 @@ public class Enemigo : MonoBehaviour
             transform.position = transform.position;
         }
     }
+
 
     public void BajarVida(int dañoRecibido)
     {

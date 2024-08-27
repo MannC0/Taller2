@@ -496,7 +496,7 @@ GameObject:
   - component: {fileID: 30720185}
   - component: {fileID: 30720187}
   - component: {fileID: 30720186}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piedra (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -616,7 +616,7 @@ GameObject:
   - component: {fileID: 33108967}
   - component: {fileID: 33108969}
   - component: {fileID: 33108968}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piedra (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1320,7 +1320,7 @@ GameObject:
   - component: {fileID: 84124474}
   - component: {fileID: 84124476}
   - component: {fileID: 84124475}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (MURO INVISIBLE) (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1450,7 +1450,7 @@ GameObject:
   - component: {fileID: 91222114}
   - component: {fileID: 91222116}
   - component: {fileID: 91222115}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1570,7 +1570,7 @@ GameObject:
   - component: {fileID: 99553895}
   - component: {fileID: 99553897}
   - component: {fileID: 99553896}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1700,7 +1700,7 @@ GameObject:
   - component: {fileID: 107067365}
   - component: {fileID: 107067367}
   - component: {fileID: 107067366}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piedra (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3356,7 +3356,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 162371241}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TreeEnvironment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3438,7 +3438,7 @@ GameObject:
   - component: {fileID: 168945921}
   - component: {fileID: 168945923}
   - component: {fileID: 168945922}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3851,7 +3851,7 @@ GameObject:
   - component: {fileID: 184168776}
   - component: {fileID: 184168778}
   - component: {fileID: 184168777}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piedra (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3971,7 +3971,7 @@ GameObject:
   - component: {fileID: 185461712}
   - component: {fileID: 185461714}
   - component: {fileID: 185461713}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (MURO INVISIBLE)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4656,7 +4656,7 @@ GameObject:
   - component: {fileID: 213626062}
   - component: {fileID: 213626064}
   - component: {fileID: 213626063}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4990,7 +4990,7 @@ GameObject:
   - component: {fileID: 220734596}
   - component: {fileID: 220734598}
   - component: {fileID: 220734597}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piedra (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7783,7 +7783,7 @@ GameObject:
   - component: {fileID: 497878890}
   - component: {fileID: 497878892}
   - component: {fileID: 497878891}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7903,7 +7903,7 @@ GameObject:
   - component: {fileID: 499455033}
   - component: {fileID: 499455035}
   - component: {fileID: 499455034}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8525,7 +8525,7 @@ GameObject:
   - component: {fileID: 566582290}
   - component: {fileID: 566582292}
   - component: {fileID: 566582291}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piedra (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8905,7 +8905,7 @@ GameObject:
   - component: {fileID: 593193799}
   - component: {fileID: 593193801}
   - component: {fileID: 593193800}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9100,7 +9100,7 @@ GameObject:
   - component: {fileID: 622719464}
   - component: {fileID: 622719466}
   - component: {fileID: 622719465}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9220,7 +9220,7 @@ GameObject:
   - component: {fileID: 625978971}
   - component: {fileID: 625978973}
   - component: {fileID: 625978972}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9767,7 +9767,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 648268747}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BarrelEnvironment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10240,7 +10240,7 @@ GameObject:
   - component: {fileID: 672093529}
   - component: {fileID: 672093531}
   - component: {fileID: 672093530}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11358,7 +11358,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 75
   m_Sprite: {fileID: 21300000, guid: 6349531e6755d5249aa9ddd2e396d3a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -13080,7 +13080,7 @@ GameObject:
   - component: {fileID: 795105457}
   - component: {fileID: 795105459}
   - component: {fileID: 795105458}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piedra (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13610,7 +13610,7 @@ GameObject:
   - component: {fileID: 863204704}
   - component: {fileID: 863204706}
   - component: {fileID: 863204705}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14514,7 +14514,7 @@ GameObject:
   - component: {fileID: 913704171}
   - component: {fileID: 913704173}
   - component: {fileID: 913704172}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piedra (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14894,7 +14894,7 @@ GameObject:
   - component: {fileID: 931764842}
   - component: {fileID: 931764844}
   - component: {fileID: 931764843}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piedra (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15274,7 +15274,7 @@ GameObject:
   - component: {fileID: 963251639}
   - component: {fileID: 963251641}
   - component: {fileID: 963251640}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15394,7 +15394,7 @@ GameObject:
   - component: {fileID: 965649037}
   - component: {fileID: 965649039}
   - component: {fileID: 965649038}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15768,7 +15768,7 @@ GameObject:
   - component: {fileID: 997803259}
   - component: {fileID: 997803261}
   - component: {fileID: 997803260}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (33)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16538,7 +16538,7 @@ GameObject:
   - component: {fileID: 1020396885}
   - component: {fileID: 1020396887}
   - component: {fileID: 1020396886}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16918,7 +16918,7 @@ GameObject:
   - component: {fileID: 1030958201}
   - component: {fileID: 1030958203}
   - component: {fileID: 1030958202}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17431,7 +17431,7 @@ GameObject:
   - component: {fileID: 1061594316}
   - component: {fileID: 1061594318}
   - component: {fileID: 1061594317}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piedra (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17626,7 +17626,7 @@ GameObject:
   - component: {fileID: 1073599632}
   - component: {fileID: 1073599634}
   - component: {fileID: 1073599633}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piedra (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18085,7 +18085,7 @@ GameObject:
   - component: {fileID: 1114610326}
   - component: {fileID: 1114610328}
   - component: {fileID: 1114610327}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piedra (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18453,7 +18453,7 @@ GameObject:
   - component: {fileID: 1126931971}
   - component: {fileID: 1126931973}
   - component: {fileID: 1126931972}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19097,7 +19097,7 @@ GameObject:
   - component: {fileID: 1173306138}
   - component: {fileID: 1173306140}
   - component: {fileID: 1173306139}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19559,7 +19559,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1192203836}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RockEnvironment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19994,7 +19994,7 @@ GameObject:
   - component: {fileID: 1198548804}
   - component: {fileID: 1198548806}
   - component: {fileID: 1198548805}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piedra (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20828,7 +20828,7 @@ GameObject:
   - component: {fileID: 1238431258}
   - component: {fileID: 1238431260}
   - component: {fileID: 1238431259}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piedra (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20948,7 +20948,7 @@ GameObject:
   - component: {fileID: 1243715480}
   - component: {fileID: 1243715482}
   - component: {fileID: 1243715481}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piedra (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21198,7 +21198,7 @@ GameObject:
   - component: {fileID: 1258271830}
   - component: {fileID: 1258271832}
   - component: {fileID: 1258271831}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21318,7 +21318,7 @@ GameObject:
   - component: {fileID: 1258960420}
   - component: {fileID: 1258960422}
   - component: {fileID: 1258960421}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21643,7 +21643,7 @@ GameObject:
   - component: {fileID: 1277238742}
   - component: {fileID: 1277238744}
   - component: {fileID: 1277238743}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22757,7 +22757,7 @@ GameObject:
   - component: {fileID: 1305974252}
   - component: {fileID: 1305974254}
   - component: {fileID: 1305974253}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piedra (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23007,7 +23007,7 @@ GameObject:
   - component: {fileID: 1318750900}
   - component: {fileID: 1318750902}
   - component: {fileID: 1318750901}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (32)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23261,7 +23261,7 @@ GameObject:
   - component: {fileID: 1331314256}
   - component: {fileID: 1331314258}
   - component: {fileID: 1331314257}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23778,7 +23778,7 @@ GameObject:
   - component: {fileID: 1383381863}
   - component: {fileID: 1383381865}
   - component: {fileID: 1383381864}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24536,7 +24536,7 @@ GameObject:
   - component: {fileID: 1408330091}
   - component: {fileID: 1408330093}
   - component: {fileID: 1408330092}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24887,7 +24887,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1422510098}
   - component: {fileID: 1422510097}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Limits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26200,7 +26200,7 @@ GameObject:
   - component: {fileID: 1476998881}
   - component: {fileID: 1476998883}
   - component: {fileID: 1476998882}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (MURO INVISIBLE) (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26405,12 +26405,12 @@ MonoBehaviour:
   enemigos:
   - {fileID: 2421227343990493877, guid: 17da4c24e52b8b54d8825b6060d15499, type: 3}
   - {fileID: 471018744072816161, guid: c5f6245d19f349042b55f706236ac973, type: 3}
-  - {fileID: 4229375004715000745, guid: ffb60357f1270f14d994ea18cfe3bec5, type: 3}
+  - {fileID: 7063005974561404373, guid: ffb60357f1270f14d994ea18cfe3bec5, type: 3}
   tiempoEntreEnemigos: 1.5
   tiempoDeHorda: 30
   tiempoEntreHordas: 15
   numeroDeHordas: 2
-  hordaActual: 0
+  hordaActual: 2
 --- !u!4 &1486824813
 Transform:
   m_ObjectHideFlags: 0
@@ -26768,7 +26768,7 @@ GameObject:
   - component: {fileID: 1515340259}
   - component: {fileID: 1515340261}
   - component: {fileID: 1515340260}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piedra (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27173,7 +27173,7 @@ GameObject:
   - component: {fileID: 1553146169}
   - component: {fileID: 1553146171}
   - component: {fileID: 1553146170}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27553,7 +27553,7 @@ GameObject:
   - component: {fileID: 1590350382}
   - component: {fileID: 1590350384}
   - component: {fileID: 1590350383}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piedra (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27803,7 +27803,7 @@ GameObject:
   - component: {fileID: 1594621600}
   - component: {fileID: 1594621602}
   - component: {fileID: 1594621601}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28053,7 +28053,7 @@ GameObject:
   - component: {fileID: 1614974622}
   - component: {fileID: 1614974624}
   - component: {fileID: 1614974623}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28303,7 +28303,7 @@ GameObject:
   - component: {fileID: 1620635201}
   - component: {fileID: 1620635203}
   - component: {fileID: 1620635202}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28423,7 +28423,7 @@ GameObject:
   - component: {fileID: 1624201108}
   - component: {fileID: 1624201110}
   - component: {fileID: 1624201109}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piedra (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28543,7 +28543,7 @@ GameObject:
   - component: {fileID: 1629600754}
   - component: {fileID: 1629600756}
   - component: {fileID: 1629600755}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piedra (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28663,7 +28663,7 @@ GameObject:
   - component: {fileID: 1638650109}
   - component: {fileID: 1638650111}
   - component: {fileID: 1638650110}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29647,7 +29647,7 @@ GameObject:
   - component: {fileID: 1706321047}
   - component: {fileID: 1706321049}
   - component: {fileID: 1706321050}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30037,7 +30037,7 @@ GameObject:
   - component: {fileID: 1724157075}
   - component: {fileID: 1724157077}
   - component: {fileID: 1724157076}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piedra (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31093,7 +31093,7 @@ GameObject:
   - component: {fileID: 1817395879}
   - component: {fileID: 1817395881}
   - component: {fileID: 1817395880}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31477,7 +31477,7 @@ GameObject:
   - component: {fileID: 1832991797}
   - component: {fileID: 1832991799}
   - component: {fileID: 1832991798}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32259,7 +32259,7 @@ GameObject:
   - component: {fileID: 1877675980}
   - component: {fileID: 1877675982}
   - component: {fileID: 1877675981}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piedra (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33106,7 +33106,7 @@ GameObject:
   - component: {fileID: 1912955921}
   - component: {fileID: 1912955923}
   - component: {fileID: 1912955922}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33359,7 +33359,7 @@ GameObject:
   - component: {fileID: 1916459868}
   - component: {fileID: 1916459870}
   - component: {fileID: 1916459869}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33477,7 +33477,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1935130938}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Other Objects for limits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33916,7 +33916,7 @@ GameObject:
   - component: {fileID: 1968678265}
   - component: {fileID: 1968678263}
   - component: {fileID: 1968678262}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45779,7 +45779,7 @@ GameObject:
   - component: {fileID: 2001931034}
   - component: {fileID: 2001931036}
   - component: {fileID: 2001931035}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (MURO INVISIBLE) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45909,7 +45909,7 @@ GameObject:
   - component: {fileID: 2010365841}
   - component: {fileID: 2010365843}
   - component: {fileID: 2010365842}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piedra (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46159,7 +46159,7 @@ GameObject:
   - component: {fileID: 2012609643}
   - component: {fileID: 2012609645}
   - component: {fileID: 2012609644}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piedra (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47358,7 +47358,7 @@ GameObject:
   - component: {fileID: 2065933106}
   - component: {fileID: 2065933108}
   - component: {fileID: 2065933107}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (MURO INVISIBLE) (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47748,7 +47748,7 @@ GameObject:
   - component: {fileID: 2079556927}
   - component: {fileID: 2079556929}
   - component: {fileID: 2079556928}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piedra (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48042,7 +48042,7 @@ GameObject:
   - component: {fileID: 2099212287}
   - component: {fileID: 2099212289}
   - component: {fileID: 2099212288}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piedra (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48162,7 +48162,7 @@ GameObject:
   - component: {fileID: 2099548159}
   - component: {fileID: 2099548161}
   - component: {fileID: 2099548160}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Piedra (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48622,7 +48622,7 @@ GameObject:
   - component: {fileID: 2119339481}
   - component: {fileID: 2119339483}
   - component: {fileID: 2119339484}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49012,7 +49012,7 @@ GameObject:
   - component: {fileID: 2133146496}
   - component: {fileID: 2133146498}
   - component: {fileID: 2133146497}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barril (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
