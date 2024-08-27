@@ -43,12 +43,12 @@ public class Enemigo : MonoBehaviour
                 animacion.SetFloat("Horizontal", 1);
             }
 
-            /*if (jefe)
+            if (jefe)
             {
-                ajuste = 180;
+                ajuste = 0;
             }
 
-            rigidbody.rotation = angulo + ajuste; */
+            rigidbody.rotation = angulo + ajuste;
             rigidbody.velocity = direccion * velocidadMovimiento;
         }
 

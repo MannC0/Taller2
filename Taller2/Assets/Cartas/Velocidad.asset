@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Velocidad
   m_EditorClassIdentifier: 
   propiedades:
-    imagenEfecto: {fileID: 21300000, guid: a4333acc2bfd79d4ea8b7471b7c8543e, type: 3}
+    imagenEfecto: {fileID: 21300000, guid: 3a736cab3a41b634e9aec7f7babc5176, type: 3}
     textoEfecto: Aumentar Velocidad
     efecto: Velocidad

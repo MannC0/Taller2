@@ -218,7 +218,7 @@ MonoBehaviour:
   - {fileID: 4835456033103974474, guid: 76a1624bfabd2f04792b138bb5e81163, type: 3}
   velocidadMovimiento: 1.5
   vida: 5000
-  jefe: 1
+  jefe: 0
   useAnimator: 1
 --- !u!114 &7880503030362071733
 MonoBehaviour:
